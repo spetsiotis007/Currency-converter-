@@ -1,0 +1,27 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.container{
+    background-image: linear-gradient(#00e8ff, #00e80e);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.currency-converter{
+    background-color: white;
+    min-height: 400px;
+    min-width: 420px;
+    max-width: 350px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+h2{
+    text-align: center;
+    margin-top: 30px;
+}
