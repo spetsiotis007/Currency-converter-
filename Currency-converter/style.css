@@ -28,7 +28,9 @@
 }
 
 h1{
-    border: 2px solid red;
+    border: 2px solid black;
+    background-color: lime;
+    color: white;
     text-align: center;
     font-style: italic;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -44,16 +46,19 @@ form{
 }
 
 .input-container{
-    border: 2px solid orange;
+    
     display: flex;
     justify-content: space-between;
     width: 100%;
+
 
 }
 
 input{
     height: 50px;
     width: 120px;
+    background-color: #BEBEBE;
+    border:none
 }
 
 span{
@@ -72,3 +77,51 @@ button{
     cursor: pointer;
     border-radius: 2px;
 }
+
+.container-selector-currency{
+
+    
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* here it starts the styling of dropdown  */
+
+.dropdown{
+     position: relative; 
+    
+}
+
+.dropdown-button{
+    background-color: lime;
+    padding: 4px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width: fit-content;
+    margin-bottom: 10px;
+}
+
+.dropdown-content{
+    position: absolute;
+    top: 30px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid red;
+    min-width: 120px;
+    background-color: white;
+}
+
+.dropdown-content a {
+    padding: 4px;
+    text-decoration: none;
+    cursor: pointer;
+
+}
+
+.dropdown-content a:hover{
+
+    background-color: lime;
+}
+
