@@ -59,9 +59,13 @@ input{
     height: 50px;
     width: 120px;
     background-color: #BEBEBE;
+<<<<<<< HEAD:style.css
     border:none;
     padding: 8px;
     font-size: 30px;
+=======
+    border:none
+>>>>>>> 61ee51a0a1e75efaa48745be5e415d772f2cc65b:Currency-converter/style.css
 }
 
 span{
@@ -82,6 +86,11 @@ button{
 }
 
 .container-selector-currency{
+<<<<<<< HEAD:style.css
+=======
+
+    
+>>>>>>> 61ee51a0a1e75efaa48745be5e415d772f2cc65b:Currency-converter/style.css
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -91,7 +100,11 @@ button{
 
 .dropdown{
      position: relative; 
+<<<<<<< HEAD:style.css
  
+=======
+    
+>>>>>>> 61ee51a0a1e75efaa48745be5e415d772f2cc65b:Currency-converter/style.css
 }
 
 .dropdown-button{
@@ -101,16 +114,27 @@ button{
     border: none;
     cursor: pointer;
     width: fit-content;
+<<<<<<< HEAD:style.css
     margin-top: 20px;
+=======
+    margin-bottom: 10px;
+>>>>>>> 61ee51a0a1e75efaa48745be5e415d772f2cc65b:Currency-converter/style.css
 }
 
 .dropdown-content{
     position: absolute;
+<<<<<<< HEAD:style.css
     overflow-y: auto;
     max-height: 100px;
     top: 48px;
     display: none;
     flex-direction: column;
+=======
+    top: 30px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid red;
+>>>>>>> 61ee51a0a1e75efaa48745be5e415d772f2cc65b:Currency-converter/style.css
     min-width: 120px;
     background-color: white;
 }
@@ -119,11 +143,19 @@ button{
     padding: 4px;
     text-decoration: none;
     cursor: pointer;
+<<<<<<< HEAD:style.css
     color: black;
+=======
+
+>>>>>>> 61ee51a0a1e75efaa48745be5e415d772f2cc65b:Currency-converter/style.css
 }
 
 .dropdown-content a:hover{
 
+<<<<<<< HEAD:style.css
     background-color: rgb(168, 165, 165);
+=======
+    background-color: lime;
+>>>>>>> 61ee51a0a1e75efaa48745be5e415d772f2cc65b:Currency-converter/style.css
 }
 
