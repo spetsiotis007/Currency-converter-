@@ -1,4 +1,4 @@
-import { currency_list } from "./currencyArr.mjs";
+import { currency_list } from "./currencyArr.js";
 
 
 // dropdown elements//
