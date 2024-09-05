@@ -1,42 +1,30 @@
+// Import the currency list
 import { currency_list } from "./currencyArr.js";
 
+// Dropdown elements
+const btndropdown1 = document.querySelector('.dropdown-button-1');
+const btndropdown2 = document.querySelector('.dropdown-button-2');
 
-// dropdown elements//
+const contentdropdown1 = document.querySelector('.dropdown-content-1');
+const contentdropdown2 = document.querySelector('.dropdown-content-2');
 
-const btndropdown1=document.querySelector('.dropdown-button-1');                      
-const btndropdown2=document.querySelector('.dropdown-button-2');  
+const arrow = document.querySelector(".arrow")
+// Button and input elements
+const button = document.getElementsByTagName('button');
+const input = document.getElementsByTagName('input');
 
+let dropdownCtn1 = false;
+let dropdownCtn2 = false;
 
-const contentdropdown1=document.querySelector('.dropdown-content-1');
-const contentdropdown2=document.querySelector('.dropdown-content-2');
-
-
-
-const dropdownitem1  = document.querySelector('.dropdownitem1');
-const dropdownitem2  = document.querySelector('.dropdownitem2');
-
-
-
-const button = document.getElementsByTagName('button')
-const input = document.getElementsByTagName('input')
-
-let dropdownCtn1 = false 
-let dropdownCtn2 = false 
-
-
-
-//create a item function
-
+// Create dropdown items dynamically
 function addDropdownContentItem(dropdownNumber, aName) {
-
     console.log("Function running");
 
     // Create a new 'a' element
     let newa = document.createElement("a");
-
-    // Add value to the 'a' element
+    newa.href = "#";
     newa.textContent = aName;
-  
+
     // Set class based on dropdown number
     if (dropdownNumber === 1) {
         newa.className = 'dropdownitem1';
@@ -47,38 +35,49 @@ function addDropdownContentItem(dropdownNumber, aName) {
     }
 }
 
-
-btndropdown1.addEventListener('click', function() {
-     if (dropdownCtn1) {
+// Dropdown 1 click handler
+btndropdown1.addEventListener('click', function () {
+    if (dropdownCtn1) {
         contentdropdown1.style.display = 'none';
-        dropdownitem1.style.display = 'none'
-        dropdownCtn1 = false
+        dropdownCtn1 = false;
     } else {
-        console.log("btn click")
+        // Add items dynamically if needed
         currency_list.forEach(currency => addDropdownContentItem(1, currency));
-        contentdropdown1.style.display = 'flex';
-        dropdownitem1.style.display = 'flex'
-        dropdownCtn1 = true
+        contentdropdown1.style.display = 'flex'; // Show the dropdown
+        dropdownCtn1 = true;
     }
 });
 
-btndropdown2.addEventListener('click', function() {
+// Dropdown 2 click handler
+btndropdown2.addEventListener('click', function () {
     if (dropdownCtn2) {
         contentdropdown2.style.display = 'none';
-        dropdownitem2.style.display = 'none'
-        dropdownCtn2 = false
+        dropdownCtn2 = false;
     } else {
-        currency_list.map((curItem) => addDropdownContentItem(1, curItem));
-        console.log("clicked")
-        contentdropdown2.style.display = 'flex';
-        dropdownitem2.style.display = 'flex'
-        dropdownCtn2 = true
+        currency_list.forEach(currency => addDropdownContentItem(2, currency));
+        contentdropdown2.style.display = 'flex'; // Show the dropdown
+        dropdownCtn2 = true;
     }
 });
 
-contentdropdown1.addEventListener('click', function() {
-     
+// Use event delegation to capture clicks on dynamically created items in dropdown 1
+contentdropdown1.addEventListener('click', function (e) {
+    if (e.target && e.target.classList.contains('dropdownitem1')) {
+        console.log('Dropdown 1 item clicked:', e.target.textContent); // Log the clicked item's text
+        btndropdown1.textContent = e.target.textContent; // Update the button text
+        btndropdown1.appendChild(arrow)          //
+        contentdropdown1.style.display = 'none'; // Hide the dropdown after selection
+        dropdownCtn1 = false;
+    }
 });
-contentdropdown2.addEventListener('click', function() {
-     
+
+// Use event delegation to capture clicks on dynamically created items in dropdown 2
+contentdropdown2.addEventListener('click', function (e) {
+    if (e.target && e.target.classList.contains('dropdownitem2')) {
+        console.log('Dropdown 2 item clicked:', e.target.textContent); // Log the clicked item's text
+        btndropdown2.textContent = e.target.textContent; // Update the button text
+        btndropdown2.appendChild(arrow)  
+        contentdropdown2.style.display = 'none'; // Hide the dropdown after selection
+        dropdownCtn2 = false;
+    }
 });
