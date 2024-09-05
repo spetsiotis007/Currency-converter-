@@ -38,34 +38,32 @@ h1{
 }
 
 form{
+     border: 2px solid lime;
      display: flex;
      flex-direction: column;
      align-items: center;
      gap: 16px;
      height:  200px;
 
+
 }
 
-.input-container{
-    
+.input-container{   
     display: flex;
     justify-content: space-between;
     width: 100%;
-
-
+    position: relative;
 }
 
 input{
     height: 50px;
     width: 120px;
     background-color: #BEBEBE;
-<<<<<<< HEAD:style.css
     border:none;
     padding: 8px;
     font-size: 30px;
-=======
-    border:none
->>>>>>> 61ee51a0a1e75efaa48745be5e415d772f2cc65b:Currency-converter/style.css
+    border:none;
+    padding-left: 66px; 
 }
 
 span{
@@ -85,56 +83,49 @@ button{
     border-radius: 2px;
 }
 
-.container-selector-currency{
-<<<<<<< HEAD:style.css
-=======
 
-    
->>>>>>> 61ee51a0a1e75efaa48745be5e415d772f2cc65b:Currency-converter/style.css
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-}
 
 /* here it starts the styling of dropdown  */
 
-.dropdown{
-     position: relative; 
-<<<<<<< HEAD:style.css
- 
-=======
-    
->>>>>>> 61ee51a0a1e75efaa48745be5e415d772f2cc65b:Currency-converter/style.css
-}
+
 
 .dropdown-button{
     background-color: lime;
-    padding: 4px;
     font-size: 16px;
     border: none;
     cursor: pointer;
     width: fit-content;
-<<<<<<< HEAD:style.css
     margin-top: 20px;
-=======
-    margin-bottom: 10px;
->>>>>>> 61ee51a0a1e75efaa48745be5e415d772f2cc65b:Currency-converter/style.css
+    height: 100%;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 60px;
 }
+
+/*down arrow  style */
+.arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    margin-bottom: 3.5px;
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
 
 .dropdown-content{
     position: absolute;
-<<<<<<< HEAD:style.css
     overflow-y: auto;
     max-height: 100px;
     top: 48px;
     display: none;
     flex-direction: column;
-=======
-    top: 30px;
-    display: flex;
-    flex-direction: column;
-    border: 2px solid red;
->>>>>>> 61ee51a0a1e75efaa48745be5e415d772f2cc65b:Currency-converter/style.css
     min-width: 120px;
     background-color: white;
 }
@@ -143,19 +134,26 @@ button{
     padding: 4px;
     text-decoration: none;
     cursor: pointer;
-<<<<<<< HEAD:style.css
     color: black;
-=======
-
->>>>>>> 61ee51a0a1e75efaa48745be5e415d772f2cc65b:Currency-converter/style.css
 }
 
 .dropdown-content a:hover{
 
-<<<<<<< HEAD:style.css
     background-color: rgb(168, 165, 165);
-=======
-    background-color: lime;
->>>>>>> 61ee51a0a1e75efaa48745be5e415d772f2cc65b:Currency-converter/style.css
 }
+
+.dropdown-button-1{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+}
+
+.dropdown-button-2{
+    position: absolute;
+    bottom: 0;
+    left: 196px;
+}
+
+
 
