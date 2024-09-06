@@ -1,17 +1,26 @@
 // Import the currency list
 import { currency_list } from "./currencyArr.js";
 
+
+const api_key = "c52a761244918d5d50709e55def81e9c"
+
+
+
 // Dropdown elements
-const btndropdown1 = document.querySelector('.dropdown-button-1');
+const btndropdown1 = document.querySelector('.dropdown-button-1'); 
 const btndropdown2 = document.querySelector('.dropdown-button-2');
 
 const contentdropdown1 = document.querySelector('.dropdown-content-1');
 const contentdropdown2 = document.querySelector('.dropdown-content-2');
 
+const bothdropdonwbtn = document.querySelector('.dropdown-button');
+
 const arrow = document.querySelector(".arrow")
 // Button and input elements
-const button = document.getElementsByTagName('button');
-const input = document.getElementsByTagName('input');
+const resultButton = document.getElementsByTagName('button')[0];
+
+const input1 = document.querySelector('.input1');
+const input2 = document.querySelector('.input2');
 
 let dropdownCtn1 = false;
 let dropdownCtn2 = false;
@@ -64,8 +73,7 @@ btndropdown2.addEventListener('click', function () {
 contentdropdown1.addEventListener('click', function (e) {
     if (e.target && e.target.classList.contains('dropdownitem1')) {
         console.log('Dropdown 1 item clicked:', e.target.textContent); // Log the clicked item's text
-        btndropdown1.textContent = e.target.textContent; // Update the button text
-        btndropdown1.appendChild(arrow)          //
+        btndropdown1.innerText  = e.target.textContent; // Update the button text        
         contentdropdown1.style.display = 'none'; // Hide the dropdown after selection
         dropdownCtn1 = false;
     }
@@ -75,9 +83,50 @@ contentdropdown1.addEventListener('click', function (e) {
 contentdropdown2.addEventListener('click', function (e) {
     if (e.target && e.target.classList.contains('dropdownitem2')) {
         console.log('Dropdown 2 item clicked:', e.target.textContent); // Log the clicked item's text
-        btndropdown2.textContent = e.target.textContent; // Update the button text
-        btndropdown2.appendChild(arrow)  
+        btndropdown2.innerText  = e.target.textContent; // Update the button text
         contentdropdown2.style.display = 'none'; // Hide the dropdown after selection
         dropdownCtn2 = false;
     }
+});
+
+resultButton.addEventListener('click', function (e) {
+    e.preventDefault()
+
+    const fromCurrency = btndropdown1.innerText;
+    const toCurrency = btndropdown2.innerText;
+    const amount = parseFloat(input1.value);
+
+    if (!fromCurrency || !toCurrency || isNaN(amount)) {
+        alert('Please ensure all fields are filled correctly.');
+        return;
+    }
+
+    // Define the API URL with your API key
+    const url = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}`;
+
+    fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            const rates = data.rates;
+            if (!rates[toCurrency]) {
+                throw new Error(`Currency ${toCurrency} not found in exchange rates.`);
+            }
+
+            console.log(rates)
+            console.log(toCurrency)
+
+            const conversionRate = rates[toCurrency];
+            const convertedAmount = amount * conversionRate;
+            input2.value = convertedAmount.toFixed(2);
+        })
+        .catch(error => {
+            console.error('There was an error fetching the exchange rates:', error);
+            alert('Error fetching exchange rates. Please try again later.');
+        });
+    
 });

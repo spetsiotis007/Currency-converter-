@@ -12,12 +12,15 @@
             <h1>Currency Converter</h1>
             
             <form>
+               <p><i class="arrow down arrow2"></i></p>
+               <p><i class="arrow down arrow1"></i></p>
                <div class="input-container">
-                  <input  type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');" >   
+                  <input class="input1" type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');" >   
                   <span>&#8594;</span>
-                  <input  type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');">
-
-                  <div class="dropdown-button dropdown-button-1">EUR <p><i class="arrow down"></i></p></div>
+                  <input class="input2" type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');">
+                  
+                  
+                  <div class="dropdown-button dropdown-button-1">EUR </div>
                   <div class="dropdown-content dropdown-content-1">
                       <a href="#" class="dropdownitem1" >EUR</a>
                       <a href="#" class="dropdownitem1" >USD</a>
@@ -27,8 +30,9 @@
                       <a href="#" class="dropdownitem1" >JPY</a>       
                       <a href="#" class="dropdownitem1" >CNY</a>       
                   </div>
-              
-                  <div class="dropdown-button dropdown-button-2">USD<p><i class="arrow down"></i></p></div>
+                  
+                
+                  <div class="dropdown-button dropdown-button-2">USD</div>
                   <div class="dropdown-content dropdown-content-2">
                       <a href="#" class="dropdownitem2" >EUR</a>
                       <a href="#" class="dropdownitem2" >USD</a>

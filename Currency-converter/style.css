@@ -16,7 +16,6 @@
     background-color: white;
     min-height: 400px;
     min-width: 420px;
-  
     padding-left: 50px;
     padding-right: 50px;
     padding-top: 30px;
@@ -44,8 +43,7 @@ form{
      align-items: center;
      gap: 16px;
      height:  200px;
-
-
+     position: relative;
 }
 
 .input-container{   
@@ -97,12 +95,13 @@ button{
     width: fit-content;
     margin-top: 20px;
     height: 100%;
-    padding: 4px;
+    padding: 4px 20px 4px 4px ;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 6px;
     width: 60px;
+
 }
 
 /*down arrow  style */
@@ -112,11 +111,24 @@ button{
     display: inline-block;
     padding: 3px;
     margin-bottom: 3.5px;
+    position: absolute;
 }
 
 .down {
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
+  }
+
+.arrow1 { 
+     top: 51px;
+     left: 46px;
+     z-index: 1;
+  }
+
+.arrow2 {
+    top: 51px;
+    right: 85px ;
+    z-index: 1;
   }
 
 .dropdown-content{
@@ -138,7 +150,6 @@ button{
 }
 
 .dropdown-content a:hover{
-
     background-color: rgb(168, 165, 165);
 }
 
