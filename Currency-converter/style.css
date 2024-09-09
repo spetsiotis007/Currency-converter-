@@ -5,7 +5,7 @@
 }
 
 .container{
-    background-image: linear-gradient(#00e8ff, #00e80e);
+    background-image: linear-gradient(pink, whitesmoke);
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -13,7 +13,7 @@
 }
 
 .currency-converter{
-    background-color: white;
+    background-color: black;
     min-height: 400px;
     min-width: 420px;
     padding-left: 50px;
@@ -28,16 +28,17 @@
 
 h1{
     border: 2px solid black;
-    background-color: lime;
+    
     color: white;
     text-align: center;
     font-style: italic;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: bold;
+    margin-top: 15%;
 }
 
 form{
-     border: 2px solid lime;
+     border: 2px solid;
      display: flex;
      flex-direction: column;
      align-items: center;
@@ -56,26 +57,30 @@ form{
 input{
     height: 50px;
     width: 140px;
-    background-color: #BEBEBE;
+    background-color: pink;
     border:none;
     padding: 8px;
     font-size: 20px;
     border:none;
     padding-left: 65px; 
+    outline: none;
+    
 }
+
+
 
 span{
 
     display: flex;
-    align-items: center;
+    align-items: center;S
     font-size: 25px;    
 }
 
 button{
     width: 100%;
     height: 40px;
-    color: white;
-    background-color: lime;
+    color: black;
+    background-color: pink;
     border: none;
     cursor: pointer;
     border-radius: 2px;
@@ -88,7 +93,7 @@ button{
 
 
 .dropdown-button{
-    background-color: lime;
+    background-color: pink;
     font-size: 16px;
     border: none;
     cursor: pointer;
